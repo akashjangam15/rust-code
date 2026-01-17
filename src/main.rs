@@ -1,5 +1,7 @@
 fn main() {
     println!("{}",fib(4));
+    println!("hello");
+    
 }
 
 fn fib(num:i32)->i64{
@@ -21,3 +23,4 @@ fn fib(num:i32)->i64{
     return second;
 
 }
+

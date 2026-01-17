@@ -1,66 +1,12 @@
-   0.019392200s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: fingerprint error for rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust)/Check { test: false }/TargetInner { name: "rust", doc: true, ..: with_path("C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", Edition2024) }
-   0.019632900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\ASUS\OneDrive\Desktop\rust\target\debug\.fingerprint\rust-87fcedbb898d7662\bin-rust`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: std::backtrace::Backtrace::create
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\std\src\..\..\backtrace\src\backtrace/win64.rs:85:14
-   1: std::backtrace::Backtrace::capture
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\std\src/backtrace.rs:296:9
-   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
-   3: cargo_util::paths::read
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::cli::main
-  13: cargo::main
-  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  15: std::rt::lang_start::<()>::{closure#0}
-  16: std::rt::lang_start_internal
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\core\src\ops/function.rs:287:21
-  17: main
-  18: __tmainCRTStartup
-  19: mainCRTStartup
-  20: <unknown>
-  21: <unknown>
-   0.045402000s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: fingerprint error for rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust)/Check { test: true }/TargetInner { name: "rust", doc: true, ..: with_path("C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", Edition2024) }
-   0.045451700s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\ASUS\OneDrive\Desktop\rust\target\debug\.fingerprint\rust-bf729dc59fd334b5\test-bin-rust`
-
-Caused by:
-    The system cannot find the file specified. (os error 2)
-
-Stack backtrace:
-   0: std::backtrace::Backtrace::create
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\std\src\..\..\backtrace\src\backtrace/win64.rs:85:14
-   1: std::backtrace::Backtrace::capture
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\std\src/backtrace.rs:296:9
-   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
-   3: cargo_util::paths::read
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::cli::main
-  13: cargo::main
-  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  15: std::rt::lang_start::<()>::{closure#0}
-  16: std::rt::lang_start_internal
-             at /rustc/ded5c06cf21d2b93bffd5d884aa6e96934ee4234/library\core\src\ops/function.rs:287:21
-  17: main
-  18: __tmainCRTStartup
-  19: mainCRTStartup
-  20: <unknown>
-  21: <unknown>
+   0.015265200s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs"
+   0.015380900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\target\\debug\\.fingerprint\\rust-87fcedbb898d7662\\dep-bin-rust"
+   0.015404900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13413112905, nanos: 166400800 } < FileTime { seconds: 13413113392, nanos: 448704200 }
+   0.015957900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: fingerprint dirty for rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust)/Check { test: false }/TargetInner { name: "rust", doc: true, ..: with_path("C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", Edition2024) }
+   0.015996000s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\target\\debug\\.fingerprint\\rust-87fcedbb898d7662\\dep-bin-rust", reference_mtime: FileTime { seconds: 13413112905, nanos: 166400800 }, stale: "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", stale_mtime: FileTime { seconds: 13413113392, nanos: 448704200 } }))
+   0.017396400s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: stale: changed "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs"
+   0.017412300s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:           (vs) "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\target\\debug\\.fingerprint\\rust-bf729dc59fd334b5\\dep-test-bin-rust"
+   0.017418600s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 13413112905, nanos: 167402100 } < FileTime { seconds: 13413113392, nanos: 448704200 }
+   0.017575900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint: fingerprint dirty for rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust)/Check { test: true }/TargetInner { name: "rust", doc: true, ..: with_path("C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", Edition2024) }
+   0.017592900s  INFO prepare_target{force=false package_id=rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust) target="rust"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\target\\debug\\.fingerprint\\rust-bf729dc59fd334b5\\dep-test-bin-rust", reference_mtime: FileTime { seconds: 13413112905, nanos: 167402100 }, stale: "C:\\Users\\ASUS\\OneDrive\\Desktop\\rust\\src\\main.rs", stale_mtime: FileTime { seconds: 13413113392, nanos: 448704200 } }))
     Checking rust v0.1.0 (C:\Users\ASUS\OneDrive\Desktop\rust)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.57s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
