@@ -1,26 +1,13 @@
-fn main() {
-    println!("{}",fib(4));
-    println!("hello");
-    
+use std::string;
+
+fn get_string_length(s: &str)->usize{
+    return s.chars().count();
 }
 
-fn fib(num:i32)->i64{
+fn main(){
+    let name=String::from("Akash");
+    let len=get_string_length(&name);
 
-    let mut first=0;
-    let mut second=1;
-
-    if num==0{
-        return first;
-    }
-    if num==1{
-        return 1;
-    }
-    for i in 1..num-1{
-        let temp=second;
-        second = second + first;
-        first= temp;
-    }
-    return second;
-
+    println!("length of the string: {:?}",len);
 }
 
