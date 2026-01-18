@@ -1,63 +1,53 @@
-// struct User{
-//     active :bool,
-//     username: String,
-//     age:i32,
-// }
+// use std::ptr::null;
 
+// //option enum
 // fn main(){
-//     let user=User{
-//         username: String::from("Akash"),
-//         active:true,
-//         age:21,
-
-//     };
-//     println!("{}",user.username);
-// }
-
-//implementing struct
-
-// struct rect{
-//     width: u32,
-//     height: u32,
-// }
-
-// impl rect{
-//     fn area(&self)->u32{
-//         return self.width*self.height;
+//     let index=find_first_a(String::from("Akash"));
+//     match index{
+//         Some(value)=>println!("index is {}",value),
+//         None=>println!("a not found"),
 //     }
-// }
-
-// fn main(){
-//     let rect1=rect{
-//         width:10,
-//         height:20,
-//     };
-//     println!("{}",rect1.area()); 
 
 // }
 
-enum Shape{
-    Circle(f64),
-    Rectangle(f64,f64),
-    Square(f64),
+// fn find_first_a(s:String)->Option<i32> {
+
+//     for (index,c) in s.chars().enumerate()
+//     {
+
+//         if c=='a'{
+//             return Some(index as i32);
+//         }
+//     }
+//     return None;
+// }
+
+
+use std::ptr::null;
+
+enum CostumOption{
+    Some(i32),
+    None,
 }
 
-fn calculate_area(shape:Shape)->f64{
-    let area=match shape{
-        Shape:: Square(a)=>a*a,
-        Shape::Rectangle(x,b )=>x*b,
-        Shape::Circle(z)=>3.14*z*z,
-    };
-    return area;
-}
-
+//option enum
 fn main(){
-    let circle=Shape::Circle(5.0);
-    let square= Shape::Square(4.0);
-    let rectangel=Shape::Rectangle(3.0,6.0);
+    let index=find_first_a(String::from("Akash"));
+    match index{
+        CostumOption::Some(value)=>println!("index is {}",value),
+        CostumOption::None=>println!("a not found"),
+    }
 
-    let ans=calculate_area(rectangel);
-    
-    println!("{}",ans);
+}
 
+fn find_first_a(s:String)->CostumOption {
+
+    for (index,c) in s.chars().enumerate()
+    {
+
+        if c=='a'{
+            return CostumOption::Some(index as i32);
+        }
+    }
+    return CostumOption::None;
 }
