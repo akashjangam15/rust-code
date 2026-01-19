@@ -1,11 +1,9 @@
 fn main(){
-    let s1=String::from("Akash");
-    let s2=s1;
-    println!("{}",s2);
-
-    let s1=34;
-
+    let mut s1=String::from("Akash");
+    do_someting(&s1);
     println!("{}",s1);
-    
 
+}
+fn do_someting(s2:& String){
+    println!("{}",s2);
 }
