@@ -1,24 +1,40 @@
-use std::vec;
+use std::{collections::HashMap, vec};
 
-fn main(){
-    let mut vec= Vec::new();
-    vec.push(1);
-    vec.push(2);
-    vec.push(3);
-    println!("{:?}",vec);
-    let even_vec=even_filter(&vec);
-    println!("{:?}",even_vec);
-    println!("{:?}",vec);
+// fn group_vlaues_by_keys(vec:Vec<(String,i32)>)->HashMap<String,i32>{
+//     let mut hm=HashMap::new();
+//     for (key,value) in vec{
+//         hm.insert(key,value );
+//     }
+//     return hm;
+// }
+
+
+// fn main(){
+//     let vec=vec![(String::from("Akash"),21),(String::from("Jyoti"),21)];
+//     let hm=group_vlaues_by_keys(vec);
+//     println!("{:?}",hm);
+// }
+
+fn group_vlaues_by_keys(vec:Vec<User>)->HashMap<String,i32>{
+    let mut hm=HashMap::new();
+    for user1 in vec{
+        hm.insert(user1.name,user1.age );
+    }
+    return hm;
 }
 
-fn even_filter(vec:&Vec<i32>)->Vec<i32>{
-    let mut new_vec=Vec::new();
+struct User{
+    name:String,
+    age:i32,
+}
 
-    for val in vec{
-        if val%2==0{
-            new_vec.push(*val);
-        }
+fn main(){
+    let vec = vec![
+        User {name:String::from("Akash"), age: 21 },
+        User { name: String::from("Jyoti"), age: 21 },
+    ];
 
-    }
-    return new_vec;
+    let hm = group_vlaues_by_keys(vec);
+
+    println!("{:?}",hm);
 }
