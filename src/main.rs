@@ -1,40 +1,68 @@
-use std::{collections::HashMap, vec};
+//iterators
 
-// fn group_vlaues_by_keys(vec:Vec<(String,i32)>)->HashMap<String,i32>{
-//     let mut hm=HashMap::new();
-//     for (key,value) in vec{
-//         hm.insert(key,value );
-//     }
-//     return hm;
-// }
 
+//iterators using loops
+
+use std::vec;
 
 // fn main(){
-//     let vec=vec![(String::from("Akash"),21),(String::from("Jyoti"),21)];
-//     let hm=group_vlaues_by_keys(vec);
-//     println!("{:?}",hm);
+//     let v1=vec![1,2,3];
+//     // let v1_iter=v1.iter();
+//     // println!("{:?}",v1_iter);
+
+//     for v in v1.iter(){
+//         print!("{} ",v);
+//     }
+
+//     print!("{:?}",v1);
 // }
 
-fn group_vlaues_by_keys(vec:Vec<User>)->HashMap<String,i32>{
-    let mut hm=HashMap::new();
-    for user1 in vec{
-        hm.insert(user1.name,user1.age );
-    }
-    return hm;
-}
 
-struct User{
-    name:String,
-    age:i32,
-}
+//iter_mut --- a mutable iterator
+// fn main(){
+//     let mut v1=vec![1,2,3,4];
+
+//     let mut v1_iter=v1.iter_mut();
+
+//     for val in v1_iter{
+//         *val=*val+1;
+//     }
+// }
+
+//iter.next
+// fn main(){
+//     let mut  num=vec![1,2,3];
+//     let mut num_iter=num.iter_mut();
+
+//     let first_num=num_iter.next();
+//     let second_num=num_iter.next();
+//     let third_num=num_iter.next();
+//     let fourth_num=num_iter.next();
+
+//     match first_num{
+//         Some(val)=>println!("{}",val),
+//         None=>println!("Nothing here"),
+//     }
+//       match fourth_num{
+//         Some(val)=>println!("{}",val),
+//         None=>println!("Nothing here"),
+//     }
+
+
+    // while let Some(val)=num_iter.next(){
+    //     print!("{} ",val);
+    // }
+// }
+
 
 fn main(){
-    let vec = vec![
-        User {name:String::from("Akash"), age: 21 },
-        User { name: String::from("Jyoti"), age: 21 },
-    ];
+    let mut nums=vec![1,2,3];
+    let mut iter=nums.into_iter();
 
-    let hm = group_vlaues_by_keys(vec);
+    for val in iter{
+        println!("{}",val);
+    }
+    // print!("{:?}",nums);
 
-    println!("{:?}",hm);
 }
+ 
