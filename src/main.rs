@@ -1,8 +1,14 @@
 //traits
 
 pub trait Summary {
-    fn summirize(&self)->String{
-        return String::from("Summirized");
+    fn summirize(&self){
+        println!("hii i there from summ ");
+    }
+    
+}
+pub trait Fix {
+    fn fix(&self){
+        println!("hii i there from fix ");
     }
     
 }
@@ -12,16 +18,18 @@ struct User{
     age:i32,
 }
 
-impl Summary for User{
-    fn summirize(&self)->String {
-        return format!("The name is {} and age is {}",self.name,self.age);
-    }
-}
+impl Summary for User{}
+impl Fix for User{}
 
 fn main(){
     let user=User{
         name:String::from("Akash"),
         age:21,
     };
-    println!("{}",user.summirize());
+    notify(user);
+
+}
+
+fn notify<T: Summary + Fix>(u:T){
+    println!("{:?} {:?}",u.summirize(),u.fix());
 }
