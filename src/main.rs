@@ -5,12 +5,13 @@ fn main(){
     {
         let str2=String::from("Largest");
         ans=longest(&str1,&str2);
+        println!("{}",ans)
     }
 
-    println!("{}",ans);
+    //println!("{}",ans);
 }
 
-fn longest(a: &str,b: &str)->&str{
+fn longest<'a>(a: &'a str,b: &'a str)->&'a str{
     if a.len()>b.len(){
         return a;
     }
