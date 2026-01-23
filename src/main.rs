@@ -1,21 +1,15 @@
+use std::thread;
+
 fn main(){
-    let ans;
-    let str1=String::from("small");
+    let handler=thread::spawn(|| {
+        for i in 1..10{
+            println!("hiii number {i} from spawned thread!");
+        }
+    });
 
-    {
-        let str2=String::from("Largest");
-        ans=longest(&str1,&str2);
-        println!("{}",ans)
+    for i in 1..10{
+        println!("hiii number {i} from main thread!");
     }
+    handler.join();
 
-    //println!("{}",ans);
-}
-
-fn longest<'a>(a: &'a str,b: &'a str)->&'a str{
-    if a.len()>b.len(){
-        return a;
-    }
-    else{
-        return b;
-    }
 }
