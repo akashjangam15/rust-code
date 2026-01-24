@@ -1,15 +1,21 @@
-use std::thread;
-
-fn main(){
-    let handler=thread::spawn(|| {
-        for i in 1..10{
-            println!("hiii number {i} from spawned thread!");
-        }
-    });
-
-    for i in 1..10{
-        println!("hiii number {i} from main thread!");
+    enum IpAddrKind {
+        V4,
+        V6,
     }
-    handler.join();
 
+    struct IpAddr {
+        kind: IpAddrKind,
+        address: String,
+    }
+
+    fn main(){
+        let  home = IpAddr {
+        kind: IpAddrKind::V4,
+        address: String::from("127.0.0.1"),
+    };
+
+    let loopback = IpAddr {
+        kind: IpAddrKind::V6,
+        address: String::from("::1"),
+    };
 }
