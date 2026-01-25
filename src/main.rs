@@ -1,21 +1,16 @@
-    enum IpAddrKind {
-        V4,
-        V6,
-    }
+#[derive(Debug)]
+enum Diff_type{
+    Intiger(i32),
+    Float(f64),
+    Text(String)
+}
 
-    struct IpAddr {
-        kind: IpAddrKind,
-        address: String,
-    }
+fn main(){
+    let row=vec![Diff_type::Intiger(4),
+    Diff_type::Float(5.6),
+    Diff_type::Text(String::from("akash"
+    ))];
 
-    fn main(){
-        let  home = IpAddr {
-        kind: IpAddrKind::V4,
-        address: String::from("127.0.0.1"),
-    };
+    println!("{:?}",row);
 
-    let loopback = IpAddr {
-        kind: IpAddrKind::V6,
-        address: String::from("::1"),
-    };
 }
