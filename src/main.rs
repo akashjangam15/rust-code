@@ -1,24 +1,35 @@
-use std::{collections::HashMap, string};
+fn largest_i32(list: &[i32]) -> &i32 {
+    let mut largest = &list[0];
 
-fn main(){
-
-    // let mut scores=HashMap::new();
-    // scores.insert(String::from("blue"),10);
-    // scores.insert(String::from("yellow"), 20);
-    // let team_name=String::from("blue");
-
-    // let score=scores.get(&team_name).copied().unwrap_or(0);
-    // println!("{}",score);
-
-    let text="Hii I am Akash and I am a rust Developer.";
-    let mut map=HashMap::new();
-
-    for word in text.split_whitespace(){
-        let count=map.entry(word).or_insert(0);
-        *count+=1;
+    for item in list {
+        if item > largest {
+            largest = item;
+        }
     }
 
-    println!("{map:?}");
+    largest
+}
 
+fn largest_char(list: &[char]) -> &char {
+    let mut largest = &list[0];
 
+    for item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
+
+fn main() {
+    let number_list = vec![34, 50, 25, 100, 65];
+
+    let result = largest_i32(&number_list);
+    println!("The largest number is {result}");
+
+    let char_list = vec!['y', 'm', 'a', 'q'];
+
+    let result = largest_char(&char_list);
+    println!("The largest char is {result}");
 }
